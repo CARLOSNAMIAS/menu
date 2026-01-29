@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/enviar-factura.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/enviar-factura",
+            "dest": "api/enviar-factura.js"
+        }
+    ],
+    "env": {
+        "NODE_ENV": "production"
+    }
+}

@@ -5,13 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const emojiPanel = document.querySelectorAll('.emoji');
 
   // Crear un objeto de audio para el sonido de notificación
-  const notificationSound = new Audio('../notificacion/confirmacion.mp3');
+  const notificationSound = new Audio('/notificacion/confirmacion.mp3');
+  notificationSound.volume = 0.5; // Volumen al 50%
 
   // Función para reproducir el sonido
   function playNotificationSound() {
+    // Intentar reproducir el sonido, pero no mostrar error si falla
     notificationSound
       .play()
-      .catch((e) => console.log('No se pudo reproducir el sonido:', e));
+      .catch(() => {
+        // Silenciar el error - el sonido es opcional
+      });
   }
 
   // CAMBIAR ESTA FUNCIÓN (líneas 14-20):

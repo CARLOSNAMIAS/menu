@@ -48,12 +48,9 @@ html {
   overflow-x: hidden; /* Previene el scroll horizontal */
 }
 
-
-
 .custom-navbar {
   background-color: #48110d;
 }
-
 
 /* ===================================================
    NAVBAR PRINCIPAL
@@ -132,7 +129,6 @@ html {
   ); /* Invierte los colores del icono para que sea visible en fondo oscuro */
 }
 
-
 .btn-hamburguesa {
   border: none;
   background: transparent;
@@ -148,15 +144,11 @@ html {
   font-size: 15px;
 }
 
-
-
-
-
-
 /* Offcanvas (Menú Lateral Desplegable) */
 .offcanvas {
   background-color: var(--secondary-bg); /* Fondo del offcanvas */
   color: var(--text-secondary);
+  text-decoration: none;
 }
 
 .offcanvas .offcanvas-title {
@@ -251,25 +243,6 @@ html {
   cursor: pointer;
   transition: var(--transition-smooth);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===================================================
    CHATBOT (IMAGEN FLOTANTE Y MODAL)

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const emojiPanel = document.querySelectorAll('.emoji');
 
   // Crear un objeto de audio para el sonido de notificación
-  const notificationSound = new Audio('./notificacion/confirmacion.mp3');
+  const notificationSound = new Audio('../notificacion/confirmacion.mp3');
 
   // Función para reproducir el sonido
   function playNotificationSound() {

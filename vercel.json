@@ -1,15 +1,13 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "api/enviar-factura.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
+            "source": "/api/enviar-factura",
+            "destination": "/api/enviar-factura.js"
+        },
         {
-            "src": "/api/enviar-factura",
-            "dest": "api/enviar-factura.js"
+            "source": "/(.*)",
+            "destination": "/public/$1"
         }
     ],
     "env": {

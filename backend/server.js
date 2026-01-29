@@ -44,7 +44,7 @@ const transporter = nodemailer.createTransport({
 // ========================================
 // RUTAS Y ENDPOINTS
 // ========================================
-app.post('/enviar-factura', (req, res) => {
+app.post(['/enviar-factura', '/api/enviar-factura'], (req, res) => {
   const { to, subject, html } = req.body;
 
   if (!to || !subject || !html) {

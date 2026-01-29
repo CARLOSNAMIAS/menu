@@ -1,9 +1,6 @@
 {
     "name": "el-corral-root",
     "version": "1.0.0",
-    "scripts": {
-        "build": "mkdir -p public"
-    },
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^17.2.1",

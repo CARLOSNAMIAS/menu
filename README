@@ -1,102 +1,59 @@
-# 🍔 El Corral - Clon Interactivo con Carrito y Notificaciones
+# 🍔 El Corral - Full-Stack Web Application
 
-Este proyecto es un clon funcional de la página web del restaurante "El Corral". La aplicación presenta un menú interactivo donde los usuarios pueden seleccionar productos, agregarlos a un carrito de compras y, al finalizar el pedido, recibir una factura detallada en su correo electrónico.
+Réplica técnica y funcional de la plataforma e-commerce para el restaurante "El Corral", implementando un flujo completo desde la selección de productos hasta el procesamiento de pedidos y notificaciones vía email.
 
-## ✨ Características Principales
+## 📸 Vista Previa del Proyecto
 
-- **Menú Interactivo:** Productos organizados en categorías desplegables (acordeón) para una navegación fluida.
-- **Carrito de Compras Dinámico:**
-  - Añadir productos al carrito.
-  - Modificar la cantidad de cada producto.
-  - Eliminar productos individualmente.
-  - Vaciar el carrito por completo.
-- **Persistencia de Datos:** El carrito de compras se guarda en el `localStorage` del navegador, permitiendo que los pedidos no se pierdan al recargar la página.
-- **Backend de Notificaciones:** Un servidor construido con Node.js y Express que utiliza Nodemailer para enviar un correo electrónico con la factura del pedido.
-- **Diseño Responsivo:** Interfaz adaptada a diferentes tamaños de pantalla gracias a Bootstrap 5.
-- **Chatbot Integrado:** Un chatbot para la interacción y soporte al usuario.
-
-## 🛠️ Tecnologías Utilizadas
-
-### Frontend
-- HTML5
-- CSS3 (con Bootstrap 5)
-- JavaScript (ES6+)
-
-### Backend
-- Node.js
-- Express.js
-- Nodemailer (para el envío de correos)
-- `cors` (para la comunicación entre frontend y backend)
-- `dotenv` (para la gestión de variables de entorno)
-
-### Herramientas de Desarrollo
-- ESLint (para el linting de código)
-- Prettier (para el formateo de código)
-
-## 🚀 Instalación y Puesta en Marcha
-
-Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
-
-ejecución del frontend.
-
-### 1. Configuración del Backend
-
-1.  **Navega al directorio del backend:**
-    ```bash
-    cd backend
-    ```
-
-2.  **Instala las dependencias:**
-    ```bash
-    npm install
-    ```
-
-3.  **Crea un archivo `.env`** en la raíz de la carpeta `backend` y añade las siguientes variables. Este archivo guardará tus credenciales de forma segura.
-
-    ```
-    PORT=3000
-    EMAIL_USER=tu_correo@gmail.com
-    EMAIL_PASS=tu_contraseña_de_aplicacion
-    ```
-
-    **Importante:** Para `EMAIL_PASS`, no uses la contraseña de tu cuenta de Gmail. Debes generar una **"Contraseña de aplicación"** desde la configuración de seguridad de tu cuenta de Google.
-
-4.  **Inicia el servidor:**
-    ```bash
-    node server.js
-    ```
-    Si todo va bien, verás un mensaje en la consola: `✅ Servidor corriendo en http://localhost:3000`.
-
-### 2. Ejecución del Frontend
-
-1.  Abre la carpeta raíz del proyecto (`El-Corral`) en Visual Studio Code.
-2.  Haz clic derecho sobre el archivo `frontend/index.html` y selecciona **"Open with Live Server"**.
-3.  Esto abrirá la página en tu navegador. Ahora puedes interactuar con el menú y el carrito, y la funcionalidad de envío de correo debería funcionar correctamente.
-
-## 📁 Estructura del Proyecto
-
-```
-El-Corral/
-├── backend/
-│   ├── server.js         # Servidor Express para enviar correos
-│   └── package.json      # Dependencias y scripts del backend
-├── frontend/
-│   ├── index.html        # Página principal del menú
-│   ├── style.css         # Estilos personalizados
-│   ├── CarritoCompras.js # Lógica principal del carrito
-│   ├── CarritoVista.js   # Funciones para renderizar el carrito
-│   ├── CarritoEmail.js   # Lógica para enviar la factura al backend
-│   ├── main.js           # Script principal que inicializa la app
-│   └── chatbot.js        # Lógica del chatbot
-└── README.md             # Este archivo
-```
-
-## ⚙️ Scripts Disponibles
-
-Dentro de la carpeta `backend`, puedes usar los siguientes scripts definidos en `package.json`:
-
-- `npm run lint`: Ejecuta ESLint para analizar el código en busca de errores.
-- `npm run format`: Ejecuta Prettier para formatear todo el código del proyecto.
+<div align="center">
+  <img src="public/img/Readme1.png" width="30%" alt="Vista principal mobile">
+  <img src="public/img/Readme2.png" width="30%" alt="Menu desktop">
+  <img src="public/img/Readme3.png" width="30%" alt="Carrito y checkout">
+</div>
 
 ---
-Hecho  por Carlos Namias 🛸🧑🏽‍💻😎
+
+## 🛠️ Stack Tecnológico
+
+### Frontend
+- **Engine:** HTML5 / CSS3 (BEM Methodology).
+- **Framework UI:** Bootstrap 5.3 (Grid system & Components).
+- **Logic:** Vanilla JavaScript (ES6+).
+- **State Management:** LocalStorage Persistence.
+- **Responsiveness:** Custom Media Queries para optimización de UI/UX en dispositivos móviles.
+
+### Backend
+- **Runtime:** Node.js.
+- **Framework:** Express.js.
+- **Middleware:** CORS, Dotenv.
+- **Services:** Nodemailer (SMTP Integration para facturación automática).
+
+---
+
+## ⚙️ Características Técnicas
+
+- **Dynamic Cart System:** Motor de gestión de estado en el cliente que permite operaciones CRUD sobre el carrito sin recarga de página.
+- **Responsive Navigation:** Implementación de menús tipo acordeón y offcanvas optimizados para performance móvil.
+- **Email Automation:** Integración de servidor SMTP para el despacho de facturas detalladas en formato HTML tras la confirmación del pedido.
+- **Chatbot Interface:** Módulo de interacción asíncrona para soporte usuario.
+
+---
+
+## � Despliegue Local
+
+### Requisitos
+- Node.js >= 16.x
+- Cuenta SMTP (o App Password de Gmail)
+
+### Configuración del Servidor
+```bash
+cd backend
+npm install
+# Crear .env con: PORT, EMAIL_USER, EMAIL_PASS
+node server.js
+```
+
+### Cliente
+El proyecto está estructurado para ser servido estáticamente. Se recomienda el uso de **Live Server** o cualquier servidor HTTP estático apuntando a la raíz.
+
+---
+**Desarrollado por:** Carlos Namias 🛸🧑🏽‍💻😎

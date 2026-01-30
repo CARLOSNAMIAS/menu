@@ -3,33 +3,50 @@
    =================================================== */
 :root {
   /* Colores principales */
-  --primary-color: #48110d; /* Color principal oscuro (ej. para fondos de navbar, headers) */
-  --secondary-color: #f9f9f9; /* Color secundario claro (ej. para fondos de secciones) */
-  --accent-color: #ecb78b; /* Color de acento general (ej. para hover, elementos interactivos) */
-  --search-accent: #f1ee0c; /* Color de acento específico para la barra de búsqueda */
+  --primary-color: #48110d;
+  /* Color principal oscuro (ej. para fondos de navbar, headers) */
+  --secondary-color: #f9f9f9;
+  /* Color secundario claro (ej. para fondos de secciones) */
+  --accent-color: #ecb78b;
+  /* Color de acento general (ej. para hover, elementos interactivos) */
+  --search-accent: #f1ee0c;
+  /* Color de acento específico para la barra de búsqueda */
 
   /* Colores de texto */
-  --text-primary: #ffffff; /* Texto principal claro */
-  --text-secondary: #973216; /* Texto secundario (ej. en offcanvas) */
-  --text-dark: #48110d; /* Texto oscuro (ej. para títulos de menú) */
-  --text-accent: #fbff1f; /* Texto de acento (ej. en offcanvas title) */
-  --text-light: #f1f1f1; /* Texto claro (ej. para mensajes de chat) */
+  --text-primary: #ffffff;
+  /* Texto principal claro */
+  --text-secondary: #973216;
+  /* Texto secundario (ej. en offcanvas) */
+  --text-dark: #48110d;
+  /* Texto oscuro (ej. para títulos de menú) */
+  --text-accent: #fbff1f;
+  /* Texto de acento (ej. en offcanvas title) */
+  --text-light: #f1f1f1;
+  /* Texto claro (ej. para mensajes de chat) */
 
   /* Bordes y sombras */
-  --border-color: #a4a2a2; /* Color de borde general */
-  --shadow-color: rgba(0, 0, 0, 0.169); /* Color de sombra general */
+  --border-color: #a4a2a2;
+  /* Color de borde general */
+  --shadow-color: rgba(0, 0, 0, 0.169);
+  /* Color de sombra general */
 
   /* Colores de estado */
-  --success-color: #28a745; /* Color para acciones exitosas */
+  --success-color: #28a745;
+  /* Color para acciones exitosas */
 
   /* Fondos de modales */
-  --modal-bg: rgba(0, 0, 0, 0.427); /* Fondo para modales generales */
-  --modal-bg-mobile: rgba(0, 0, 0, 0.8); /* Fondo para modales en móvil */
-  --modal-bg-chatbot: #ffffff59; /* Fondo específico para el modal del chatbot */
+  --modal-bg: rgba(0, 0, 0, 0.427);
+  /* Fondo para modales generales */
+  --modal-bg-mobile: rgba(0, 0, 0, 0.8);
+  /* Fondo para modales en móvil */
+  --modal-bg-chatbot: #ffffff59;
+  /* Fondo específico para el modal del chatbot */
 
   /* Transiciones */
-  --transition-smooth: all 0.3s ease; /* Transición suave para la mayoría de los elementos */
-  --transition-quick: all 0.2s ease; /* Transición rápida para elementos interactivos */
+  --transition-smooth: all 0.3s ease;
+  /* Transición suave para la mayoría de los elementos */
+  --transition-quick: all 0.2s ease;
+  /* Transición rápida para elementos interactivos */
 
   /* Puntos de quiebre para responsive (opcional, si se usan en JS o para referencia) */
   --mobile-max: 380px;
@@ -45,7 +62,8 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Previene el scroll horizontal */
+  overflow-x: hidden;
+  /* Previene el scroll horizontal */
 }
 
 .custom-navbar {
@@ -56,9 +74,8 @@ html {
    NAVBAR PRINCIPAL
    =================================================== */
 .navbar {
-  background-color: var(
-    --primary-color
-  ); /* Usa el color principal definido en las variables */
+  background-color: var(--primary-color);
+  /* Usa el color principal definido en las variables */
   padding: 10px 20px;
 }
 
@@ -81,7 +98,8 @@ html {
 
 .btn-outline-light {
   border: 1px solid var(--search-accent);
-  color: #dfe209; /* Color directo, considerar usar una variable si se repite */
+  color: #dfe209;
+  /* Color directo, considerar usar una variable si se repite */
   background-position-x: left;
 }
 
@@ -92,11 +110,10 @@ html {
 }
 
 .btn i {
-  color: rgb(
-    237,
-    215,
-    18
-  ); /* Color directo, considerar usar una variable si se repite */
+  color: rgb(237,
+      215,
+      18);
+  /* Color directo, considerar usar una variable si se repite */
 }
 
 /* Logo en la Navbar */
@@ -109,7 +126,8 @@ html {
 
 /* Icono de carrito (ej. en la navbar, si es visible) */
 .bi-cart {
-  font-size: 10rem; /* Tamaño muy grande, revisar si es intencional para un uso específico */
+  font-size: 10rem;
+  /* Tamaño muy grande, revisar si es intencional para un uso específico */
 }
 
 /* Menú Hamburguesa (Toggler) */
@@ -124,9 +142,8 @@ html {
   background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: center;
-  filter: invert(
-    100%
-  ); /* Invierte los colores del icono para que sea visible en fondo oscuro */
+  filter: invert(100%);
+  /* Invierte los colores del icono para que sea visible en fondo oscuro */
 }
 
 .btn-hamburguesa {
@@ -146,7 +163,8 @@ html {
 
 /* Offcanvas (Menú Lateral Desplegable) */
 .offcanvas {
-  background-color: var(--secondary-bg); /* Fondo del offcanvas */
+  background-color: var(--secondary-bg);
+  /* Fondo del offcanvas */
   color: var(--text-secondary);
   text-decoration: none;
 }
@@ -157,7 +175,8 @@ html {
 }
 
 .offcanvas .navbar-nav .nav-link {
-  color: var(--primary-color); /* Color de los enlaces en el offcanvas */
+  color: var(--primary-color);
+  /* Color de los enlaces en el offcanvas */
   transition: color 0.3s ease;
 }
 
@@ -206,15 +225,19 @@ html {
 }
 
 .accordion-item {
-  margin-bottom: 0.8px; /* Espacio mínimo entre ítems del acordeón */
+  margin-bottom: 0.8px;
+  /* Espacio mínimo entre ítems del acordeón */
 }
 
 .accordion-button {
-  background-image: url('https://pideenlinea.elcorral.com/images/banner/banner_pasillos/Banner%20TodoTerreno.jpg?v=20240902-002'); /* Imagen de fondo para el botón del acordeón */
-  background-size: contain;
+  background-image: url('https://pideenlinea.elcorral.com/images/banner/banner_pasillos/Banner%20TodoTerreno.jpg?v=20240902-002');
+  /* Imagen de fondo para el botón del acordeón */
+  background-size: 100% 100%;
+  /* ← Cambiado a 100% 100% para evitar recortes en pantallas grandes */
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000; /* Fondo de relleno detrás de la imagen */
+  background-color: #000;
+  /* Fondo de relleno detrás de la imagen */
   color: var(--text-light);
   font-weight: bold;
   min-height: 190px;
@@ -265,7 +288,8 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 4rem; /* 100px */
+  height: 4rem;
+  /* 100px */
   background-color: var(--primary-color);
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
@@ -284,16 +308,16 @@ html {
   left: 0;
   width: 100%;
   margin: 0;
-  background-color: var(
-    --modal-bg-chatbot
-  ); /* Usa la variable específica para el modal del chatbot */
+  background-color: var(--modal-bg-chatbot);
+  /* Usa la variable específica para el modal del chatbot */
   z-index: 9999;
 }
 
 .modal-dialog {
   position: relative;
   width: 100%;
-  max-width: 20rem; /* 320px */
+  max-width: 20rem;
+  /* 320px */
 }
 
 .modal-content {
@@ -308,7 +332,8 @@ html {
 
 /* Contenido del chat dentro del modal */
 .chat-content {
-  max-height: 18.75rem; /* 300px */
+  max-height: 18.75rem;
+  /* 300px */
   overflow-y: auto;
   padding: 0.625rem;
   border-radius: 8px;
@@ -381,7 +406,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 0.625rem;
-  width: 12.5rem; /* 200px */
+  width: 12.5rem;
+  /* 200px */
 }
 
 .emoji {
@@ -405,7 +431,8 @@ html {
 }
 
 #chatbotModalHeader {
-  cursor: move; /* Permite arrastrar el header del modal */
+  cursor: move;
+  /* Permite arrastrar el header del modal */
 }
 
 /* ===================================================
@@ -413,8 +440,10 @@ html {
    =================================================== */
 /* Botón flotante del carrito (oculto por defecto) */
 .carrito-flotante {
-  display: none !important; /* Oculta el botón flotante del carrito */
-  position: none; /* Resetea la posición si se muestra */
+  display: none !important;
+  /* Oculta el botón flotante del carrito */
+  position: none;
+  /* Resetea la posición si se muestra */
   bottom: none;
   right: none;
   z-index: none;
@@ -423,7 +452,8 @@ html {
 /* Estilos del botón del carrito (general) */
 .carrito-btn {
   border-radius: 50px;
-  padding: none; /* Considerar un padding explícito si se usa */
+  padding: none;
+  /* Considerar un padding explícito si se usa */
   font-size: 18px;
   font-weight: bold;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -436,11 +466,10 @@ html {
 .carrito-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(
-    45deg,
-    #00000000,
-    #00000000
-  ); /* Fondo transparente en hover */
+  background: linear-gradient(45deg,
+      #00000000,
+      #00000000);
+  /* Fondo transparente en hover */
 }
 
 .carrito-btn:active {
@@ -481,11 +510,10 @@ html {
 }
 
 .modal-header {
-  background: linear-gradient(
-    45deg,
-    #48110d,
-    #852d01
-  ); /* Degradado para el header del modal */
+  background: linear-gradient(45deg,
+      #48110d,
+      #852d01);
+  /* Degradado para el header del modal */
   color: white;
   border-radius: 15px 15px 0 0;
   border-bottom: none;
@@ -497,7 +525,8 @@ html {
 }
 
 .btn-close {
-  filter: brightness(0) invert(1); /* Invierte el color del botón de cerrar */
+  filter: brightness(0) invert(1);
+  /* Invierte el color del botón de cerrar */
 }
 
 /* Ítems individuales dentro del carrito */
@@ -523,7 +552,8 @@ html {
 }
 
 .carrito-item h6 {
-  color: #2c3e50; /* Color directo, considerar variable */
+  color: #2c3e50;
+  /* Color directo, considerar variable */
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -560,7 +590,8 @@ html {
 .cantidad-controls span {
   font-weight: bold;
   font-size: 1.1rem;
-  color: #2c3e50; /* Color directo, considerar variable */
+  color: #2c3e50;
+  /* Color directo, considerar variable */
   min-width: 25px;
   text-align: center;
 }
@@ -593,7 +624,8 @@ html {
 }
 
 .carrito-total h4 {
-  color: #2c3e50; /* Color directo, considerar variable */
+  color: #2c3e50;
+  /* Color directo, considerar variable */
   font-weight: bold;
   margin: 0;
 }
@@ -643,9 +675,12 @@ html {
 .btn-danger {
   background: linear-gradient(45deg, #dc3545, #fd7e14);
   border: none;
-  border-radius: 25px !important; /* Sobrescribe el border-radius anterior para este contexto */
-  width: auto !important; /* Sobrescribe el ancho anterior */
-  height: auto !important; /* Sobrescribe la altura anterior */
+  border-radius: 25px !important;
+  /* Sobrescribe el border-radius anterior para este contexto */
+  width: auto !important;
+  /* Sobrescribe el ancho anterior */
+  height: auto !important;
+  /* Sobrescribe la altura anterior */
 }
 
 .btn-danger:hover {
@@ -676,7 +711,8 @@ html {
 .carrito-vacio {
   text-align: center;
   padding: 40px 20px;
-  color: #6c757d; /* Color directo, considerar variable */
+  color: #6c757d;
+  /* Color directo, considerar variable */
 }
 
 .carrito-vacio i {
@@ -691,6 +727,7 @@ html {
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -702,6 +739,7 @@ html {
     transform: translateX(0);
     opacity: 1;
   }
+
   to {
     transform: translateX(100%);
     opacity: 0;
@@ -709,6 +747,7 @@ html {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -716,9 +755,11 @@ html {
   100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(-5px);
   }
@@ -726,16 +767,21 @@ html {
 
 /* Contador de carrito en la navbar (posición relativa) */
 .carrito-navbar {
-  position: relative; /* Necesario para que el contador se posicione respecto a este contenedor */
+  position: relative;
+  /* Necesario para que el contador se posicione respecto a este contenedor */
   display: inline-block;
 }
 
 #carrito-contador {
   position: absolute;
-  top: -8px; /* Ajusta según lo necesites */
-  right: -8px; /* Ajusta según lo necesites */
-  background-color: #f6e01d; /* Color directo, considerar variable */
-  color: rgb(10, 10, 10); /* Color directo, considerar variable */
+  top: -8px;
+  /* Ajusta según lo necesites */
+  right: -8px;
+  /* Ajusta según lo necesites */
+  background-color: #f6e01d;
+  /* Color directo, considerar variable */
+  color: rgb(10, 10, 10);
+  /* Color directo, considerar variable */
   font-size: 0.75rem;
   font-weight: bold;
   padding: 4px 6px;
@@ -746,7 +792,8 @@ html {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  pointer-events: none; /* Permite hacer clic a través del contador */
+  pointer-events: none;
+  /* Permite hacer clic a través del contador */
   transition: transform 0.2s;
 }
 
@@ -754,9 +801,8 @@ html {
    FOOTER
    =================================================== */
 .custom-footer {
-  background-color: var(
-    --primary-color
-  ) !important; /* Color fijo y forzado para el footer */
+  background-color: var(--primary-color) !important;
+  /* Color fijo y forzado para el footer */
   color: #ffffff;
   padding: 40px 20px;
   font-size: 0.95rem;
@@ -770,7 +816,8 @@ html {
 }
 
 .custom-footer a:hover {
-  color: #ffc107; /* Color directo, considerar variable */
+  color: #ffc107;
+  /* Color directo, considerar variable */
   text-decoration: underline;
 }
 
@@ -782,7 +829,8 @@ html {
 }
 
 .custom-footer .social-media i:hover {
-  color: #ffc107; /* Color directo, considerar variable */
+  color: #ffc107;
+  /* Color directo, considerar variable */
 }
 
 /* ===================================================
@@ -880,16 +928,16 @@ html {
 /* Estilos responsive específicos para el chatbot y carrito (hasta 768px de ancho) */
 @media (max-width: 768px) {
   .chatbot-image img {
-    width: 3.75rem; /* 60px */
+    width: 3.75rem;
+    /* 60px */
     height: 3.75rem;
     bottom: 0.625rem;
     right: 0.625rem;
   }
 
   .modal {
-    background-color: var(
-      --modal-bg-mobile
-    ); /* Fondo más oscuro para el modal en móvil */
+    background-color: var(--modal-bg-mobile);
+    /* Fondo más oscuro para el modal en móvil */
     width: 100%;
     bottom: 0;
     left: 0;
@@ -911,7 +959,8 @@ html {
   }
 
   .chat-content {
-    max-height: 12.5rem; /* 200px */
+    max-height: 12.5rem;
+    /* 200px */
     padding: 0.5rem;
   }
 

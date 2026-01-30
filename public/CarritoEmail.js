@@ -41,71 +41,95 @@ class CarritoEmail {
     const itemsHtml = pedido.items
       .map(
         (item) => `
-      <tr style="border-bottom: 1px solid #ddd;">
-        <td style="padding: 10px;">${item.nombre}</td>
-        <td style="padding: 10px; text-align: center;">${item.cantidad}</td>
-        <td style="padding: 10px; text-align: right;">${formatearPrecio(item.precio)}</td>
-        <td style="padding: 10px; text-align: right;">${formatearPrecio(item.precio * item.cantidad)}</td>
+      <tr style="border-bottom: 1px solid #eeeeee;">
+        <td style="padding: 12px 10px; font-size: 14px; color: #333333;">
+          <strong style="display: block;">${item.nombre}</strong>
+          <span style="font-size: 12px; color: #777777;">Cantidad: ${item.cantidad}</span>
+        </td>
+        <td style="padding: 12px 10px; text-align: right; font-size: 14px; color: #333333;">${formatearPrecio(item.precio * item.cantidad)}</td>
       </tr>
     `
       )
-      .join(''); // Une todas las filas en un solo string
+      .join('');
 
-    // Retorna el HTML completo de la factura con estilos inline para compatibilidad con clientes de email
     return `
-      <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; background-color: #f9f9f9;">
-        <!-- Header con logo de la empresa -->
-        <div style="text-align: center; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
-          <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/img/logo_old.png" alt="Logo El Corral" style="max-width: 150px;">
-        </div>
-        
-        <!-- Contenido principal de la factura -->
-        <div style="padding: 20px 0;">
-          <!-- Título y saludo personalizado -->
-          <h1 style="color: #48110d; text-align: center; margin: 0;">Confirmación de tu Pedido</h1>
-          <p style="text-align: center; font-size: 1.1em;">¡Hola <strong>${pedido.cliente.nombre}</strong>!</p>
-          <p>Gracias por tu compra en El Corral. Hemos recibido tu pedido y ya lo estamos preparando con mucho gusto.</p>
+      <div style="background-color: #f4f4f4; padding: 20px; font-family: 'Segoe UI', Arial, sans-serif;">
+        <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
           
-          <hr>
-          
-          <!-- Detalles básicos del pedido -->
-          <h2>Detalles del Pedido</h2>
-          <p><strong>Número de Pedido:</strong> ${pedido.id}</p>
-          <p><strong>Fecha:</strong> ${pedido.fecha}</p>
-          <p><strong>Total Pagado:</strong> <strong style="color: #48110d; font-size: 1.2em;">${formatearPrecio(pedido.total)}</strong></p>
-          
-          <!-- Tabla de productos -->
-          <h3>Productos</h3>
-          <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-            <!-- Cabecera de la tabla -->
-            <thead>
-              <tr style="background-color: #48110d; color: white;">
-                <th style="padding: 12px; text-align: left;">Producto</th>
-                <th style="padding: 12px; text-align: center;">Cantidad</th>
-                <th style="padding: 12px; text-align: right;">Precio Unit.</th>
-                <th style="padding: 12px; text-align: right;">Subtotal</th>
-              </tr>
-            </thead>
-            <!-- Cuerpo de la tabla con los productos -->
-            <tbody>
-              ${itemsHtml}
-            </tbody>
-          </table>
-
-          <!-- Información de entrega y pago -->
-          <h3 style="margin-top: 20px; color: #48110d;">Información de Entrega</h3>
-          <div style="background-color: #fff; padding: 15px; border-radius: 5px;">
-              <p><strong>Dirección:</strong> ${pedido.cliente.direccion}</p>
-              <p><strong>Teléfono:</strong> ${pedido.cliente.telefono}</p>
-              <p><strong>Método de Pago:</strong> ${pedido.cliente.metodoPago}</p>
-              ${pedido.cliente.comentarios ? `<p><strong>Comentarios:</strong> ${pedido.cliente.comentarios}</p>` : ''}
+          <!-- Encabezado con Color de Marca -->
+          <div style="background-color: #48110d; padding: 30px; text-align: center;">
+            <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/img/logooo.png" alt="El Corral" style="max-width: 180px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
           </div>
-          
-          <!-- Separador y disclaimer -->
-          <hr style="margin-top: 20px;">
-          <!-- Nota aclaratoria sobre el propósito educativo del proyecto -->
-          <p style="font-size: 0.9em; color: #777; text-align: center;">Este no es un documento de factura real. Se trata de un proyecto tipo Clone Corral con fines exclusivamente educativos.
-¡Gracias por visitar y probar mi página!</p>
+
+          <!-- Cuerpo del Mensaje -->
+          <div style="padding: 40px 30px;">
+            <h1 style="color: #48110d; margin-top: 0; font-size: 24px; text-align: center;">¡Gracias por tu pedido!</h1>
+            <p style="font-size: 16px; line-height: 1.6; color: #555555; text-align: center;">
+              Hola <strong>${pedido.cliente.nombre}</strong>, estamos preparando tu orden para que la disfrutes muy pronto.
+            </p>
+
+            <!-- Imagen Banner del Restaurante -->
+            <div style="text-align: center; margin: 20px 0;">
+              <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/img/carrusel-1.jpg" alt="Hamburguesas El Corral" style="width: 100%; max-width: 500px; border-radius: 8px;">
+            </div>
+
+            <!-- Card de Info del Pedido -->
+            <div style="background-color: #fff8f5; border: 1px dashed #f58b2d; border-radius: 8px; padding: 20px; margin: 30px 0;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td style="font-size: 13px; color: #888888; text-transform: uppercase;">ID del Pedido</td>
+                  <td style="font-size: 13px; color: #888888; text-transform: uppercase; text-align: right;">Fecha</td>
+                </tr>
+                <tr>
+                  <td style="font-size: 15px; color: #333333; font-weight: bold;">#${pedido.id}</td>
+                  <td style="font-size: 15px; color: #333333; font-weight: bold; text-align: right;">${pedido.fecha}</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Lista de Productos -->
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 2px solid #48110d;">
+                  <th style="padding: 10px 0; text-align: left; color: #48110d; font-size: 14px;">Descripción</th>
+                  <th style="padding: 10px 0; text-align: right; color: #48110d; font-size: 14px;">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${itemsHtml}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td style="padding: 20px 0 0 0; font-size: 18px; font-weight: bold; color: #333333;">Total del Pedido</td>
+                  <td style="padding: 20px 0 0 0; font-size: 22px; font-weight: bold; color: #f58b2d; text-align: right;">${formatearPrecio(pedido.total)}</td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <!-- Información de Entrega -->
+            <div style="margin-top: 40px; border-top: 1px solid #eeeeee; padding-top: 30px;">
+              <h3 style="color: #48110d; font-size: 16px; margin-bottom: 15px;">Dirección de Entrega</h3>
+              <p style="font-size: 14px; color: #666666; margin: 0; line-height: 1.5;">
+                ${pedido.cliente.direccion}<br>
+                Tel: ${pedido.cliente.telefono}<br>
+                Pago: ${pedido.cliente.metodoPago}
+              </p>
+              ${pedido.cliente.comentarios ? `<p style="margin-top: 10px; font-style: italic; font-size: 13px; color: #888888;">"${pedido.cliente.comentarios}"</p>` : ''}
+            </div>
+
+          </div>
+
+          <!-- Footer -->
+          <div style="background-color: #f9f9f9; padding: 30px; text-align: center; border-top: 1px solid #eeeeee;">
+            <p style="font-size: 12px; color: #999999; margin-bottom: 20px; line-height: 1.5;">
+              Este es un proyecto académico de clon funcional.<br>
+              <strong>Carlos Namias 🛸🧑🏽‍💻😎</strong>
+            </p>
+            <div style="display: inline-block;">
+              <a href="https://carlosnamias.github.io/menu/" style="background-color: #f58b2d; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 14px; font-weight: bold;">Volver a la Tienda</a>
+            </div>
+          </div>
+
         </div>
       </div>
     `;

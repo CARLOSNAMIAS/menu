@@ -65,8 +65,6 @@
   text-decoration: none;
   transition: background-color 0.3s ease;
   position: relative;
-
-  /* Transición suave */
 }
 
 .product-info .btn-custom:hover {
@@ -119,87 +117,182 @@
   }
 }
 
-/* Dispositivos móviles y tablets pequeñas (hasta 767px) */
+/* ============================================
+   🔧 CORRECCIÓN PRINCIPAL - MÓVILES
+   Dispositivos móviles y tablets pequeñas (hasta 767px)
+   ============================================ */
 @media (max-width: 767px) {
+
   /* Estilos del acordeón para móviles */
   .accordion-button {
-    background-size: contain;
+    background-size: cover;
+    /* ← CAMBIADO: De contain a cover para ocupar todo el ancho */
     background-position: center;
-    min-height: 50px;
+    min-height: 80px;
+    /* ← Aumentado ligeramente para mejor visibilidad */
   }
 
   .accordion-body {
-    padding: 2px;
+    padding: 8px;
+    /* Aumentado de 2px a 8px para mejor espaciado */
   }
 
-  /* Elementos del menú */
+  /* ⭐ CORRECCIÓN: Mantener layout HORIZONTAL en móviles */
   .menu-item {
-    flex-wrap: wrap;
-    text-align: center;
+    display: flex !important;
+    flex-direction: row !important;
+    /* ← CAMBIADO: De wrap a row */
+    flex-wrap: nowrap !important;
+    /* ← CAMBIADO: Sin wrap */
+    align-items: flex-start !important;
+    /* ← CAMBIADO: De center a flex-start para alinear títulos */
+    gap: 12px;
+    /* ← AÑADIDO: Espaciado entre elementos */
+    padding: 10px;
+    /* ← AÑADIDO: Padding interno */
+    margin-bottom: 10px;
+    /* ← AÑADIDO: Separación entre items */
+    background-color: white;
+    /* ← AÑADIDO: Fondo blanco */
+    border-radius: 8px;
+    /* ← AÑADIDO: Bordes redondeados */
+    text-align: left;
+    /* ← CAMBIADO: De center a left */
   }
 
-  /* Imagen responsiva para móviles */
+  /* ⭐ CORRECCIÓN: Imagen fija a la IZQUIERDA */
+  .product-image {
+    flex-shrink: 0;
+    /* ← AÑADIDO: Evita que la imagen se encoja */
+  }
+
   .product-image img {
-    max-width: 50%;
-    width: auto;
-    height: auto;
-    margin-bottom: 8px;
+    width: 70px !important;
+    /* ← CAMBIADO: Tamaño fijo pequeño */
+    height: 70px !important;
+    /* ← CAMBIADO: Cuadrado */
+    min-width: 70px !important;
+    /* ← AÑADIDO: Ancho mínimo */
+    max-width: 70px !important;
+    /* ← CAMBIADO: Límite de ancho */
+    margin-bottom: 0 !important;
+    /* ← CAMBIADO: Sin margen inferior */
+    object-fit: cover;
+    border-radius: 8px;
   }
 
-  /* Descripción en móviles */
+  /* ⭐ CORRECCIÓN: Contenedor de descripción flexible */
   .product-description {
-    margin-bottom: 8px;
+    flex: 1;
+    /* ← AÑADIDO: Ocupa espacio restante */
+    margin-bottom: 0;
+    /* ← CAMBIADO: Sin margen inferior */
+    text-align: left;
+    /* ← CAMBIADO: Alineado a la izquierda */
+    min-width: 0;
+    /* ← AÑADIDO: Permite que el texto se ajuste */
   }
 
   .product-description h5 {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    /* ← Reducido para móviles */
+    margin-bottom: 4px;
+    /* ← Reducido */
+    text-align: left;
+    /* ← CAMBIADO: Alineado a la izquierda */
+    line-height: 1.2;
   }
 
   .product-description p {
-    font-size: 0.875rem;
-    /* 14px */
+    font-size: 0.75rem;
+    /* ← Reducido a 12px */
     max-width: 100%;
-    margin-bottom: 10px;
+    margin: 0 0 6px 0;
+    /* ← CAMBIADO: Sin centrado automático */
+    text-align: left;
+    /* ← CAMBIADO: Alineado a la izquierda */
+    line-height: 1.3;
+
+    /* ⭐ AÑADIDO: Limitar descripción a 2-3 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  /* Información del producto en móviles */
+  /* ⭐ CORRECCIÓN: Información del producto en línea */
   .product-info {
+    display: flex;
+    flex-direction: column;
+    /* ← AÑADIDO: Precio y botón en columna */
+    gap: 6px;
     font-size: 0.875rem;
-    /* 14px */
+    text-align: right;
+    /* ← CAMBIADO: A la derecha para mejor balance */
+    min-width: 90px;
+    /* ← AÑADIDO: Ancho fijo para info */
+    align-items: flex-end;
+    /* ← AÑADIDO: Alinea hijos al final */
   }
 
   .product-info .price {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+    /* ← Reducido */
+    font-weight: bold;
+    color: #f58b2d;
+    white-space: nowrap;
   }
 
   .product-info .btn,
   .product-info .btn-custom {
     font-size: 0.6rem;
-    /* 12.8px */
-    padding: 4px 8px;
+    /* ← Reducido un poco más */
+    padding: 2px 8px;
+    /* ← Más compacto */
+    white-space: nowrap;
+    align-self: flex-end;
   }
 }
 
 /* Móviles muy pequeños (hasta 480px) */
 @media (max-width: 480px) {
+
+  /* Mantener layout horizontal */
+  .menu-item {
+    gap: 10px;
+    padding: 8px;
+  }
+
+  /* Imagen aún más pequeña */
+  .product-image img {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+  }
+
   .product-description h5 {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 3px;
   }
 
   .product-description p {
-    font-size: 0.8rem;
-    /* 12.8px */
+    font-size: 0.7rem;
+    /* 11.2px */
     line-height: 1.3;
+    -webkit-line-clamp: 2;
+    /* Máximo 2 líneas */
   }
 
   .product-info .price {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    color: #f58b2d;
   }
 
   .product-info .btn-custom {
-    font-size: 0.7rem;
-    padding: 2px 5px;
+    font-size: 0.55rem;
+    padding: 2px 6px;
   }
 
   .accordion-button {
@@ -210,24 +303,39 @@
 
 /* Pantallas extra pequeñas (hasta 320px) */
 @media (max-width: 320px) {
+
+  /* Imagen muy compacta */
+  .product-image img {
+    width: 55px !important;
+    height: 55px !important;
+    min-width: 55px !important;
+    max-width: 55px !important;
+  }
+
   .product-description h5 {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .product-description p {
-    font-size: 0.75rem;
-    /* 12px */
+    font-size: 0.65rem;
+    /* 10.4px */
+    -webkit-line-clamp: 2;
   }
 
   .product-info .price {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    color: #f58b2d;
   }
 
   .product-info .btn-custom {
-    font-size: 0.75rem;
-    padding: 3px 6px;
+    font-size: 0.5rem;
+    padding: 2px 5px;
   }
 }
+
+/* ============================================
+   OFFCANVAS - MENÚ LATERAL
+   ============================================ */
 
 /* Offcanvas: ancho al 50% */
 #offcanvasMenu {

@@ -6,6 +6,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config(); // Cargar variables de entorno
 
 // ========================================
@@ -30,6 +31,9 @@ app.use(
 // ========================================
 app.use(express.json());
 
+// Servir archivos estáticos desde la carpeta 'public' (subiendo un nivel desde 'backend')
+app.use(express.static(path.join(__dirname, '../public')));
+
 // ========================================
 // CONFIGURACIÓN DEL TRANSPORTADOR DE EMAIL
 // ========================================
@@ -44,7 +48,7 @@ const transporter = nodemailer.createTransport({
 // ========================================
 // RUTAS Y ENDPOINTS
 // ========================================
-app.post(['/enviar-factura', '/api/enviar-factura', '*/enviar-factura'], (req, res) => {
+app.post(['/enviar-factura', '/api/enviar-factura'], (req, res) => {
   const { to, subject, html } = req.body;
 
   if (!to || !subject || !html) {

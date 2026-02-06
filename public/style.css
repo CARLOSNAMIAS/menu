@@ -232,8 +232,7 @@ html {
 .accordion-button {
   background-image: url('https://pideenlinea.elcorral.com/images/banner/banner_pasillos/Banner%20TodoTerreno.jpg?v=20240902-002');
   /* Imagen de fondo para el botón del acordeón */
-  background-size: 100% 100%;
-  /* ← Cambiado a 100% 100% para evitar recortes en pantallas grandes */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #000;

@@ -56,7 +56,7 @@ class CarritoEmail {
       <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; background-color: #f9f9f9;">
         <!-- Header con logo de la empresa -->
         <div style="text-align: center; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
-          <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/img/logo_old.png" alt="Logo El Corral" style="max-width: 150px;">
+          <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/public/img/logo_old.png" alt="Logo El Corral" style="max-width: 150px;">
         </div>
         
         <!-- Contenido principal de la factura -->

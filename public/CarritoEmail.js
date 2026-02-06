@@ -58,7 +58,7 @@ class CarritoEmail {
           
           <!-- Encabezado con Color de Marca -->
           <div style="background-color: #48110d; padding: 30px; text-align: center;">
-            <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/img/logooo.png" alt="El Corral" style="max-width: 180px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+            <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/public/img/logooo.png" alt="El Corral" style="max-width: 180px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
           </div>
 
           <!-- Cuerpo del Mensaje -->
@@ -70,7 +70,7 @@ class CarritoEmail {
 
             <!-- Imagen Banner del Restaurante -->
             <div style="text-align: center; margin: 20px 0;">
-              <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/img/carrusel-1.jpg" alt="Hamburguesas El Corral" style="width: 100%; max-width: 500px; border-radius: 8px;">
+              <img src="https://raw.githubusercontent.com/CarlosNamias/menu/main/public/img/carrusel-1.jpg" alt="Hamburguesas El Corral" style="width: 100%; max-width: 500px; border-radius: 8px;">
             </div>
 
             <!-- Card de Info del Pedido -->

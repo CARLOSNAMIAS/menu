@@ -884,23 +884,29 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" id="chatbotModalContent">
         <!-- Cabecera del modal como área de arrastre -->
-        <div class="chatbot-header-image-container" id="chatbotModalHeader">
-          <img src="./img/logooo.png" alt="Soporte Chatbot" class="chatbot-header-image" />
+        <div class="chatbot-header-premium" id="chatbotModalHeader">
+          <div class="d-flex align-items-center w-100">
+            <div class="chatbot-avatar-container">
+              <img src="./img/logooo.png" alt="Bot Logo" class="chatbot-mini-logo" />
+              <div class="status-indicator online"></div>
+            </div>
+            <div class="ms-3 flex-grow-1">
+              <h6 class="mb-0 text-white">Soporte El Corral</h6>
+              <small class="text-white-50">En línea ahora</small>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
         </div>
 
-        <div class="modal-body">
+        <div class="modal-body p-0">
           <!-- Contenido del chat -->
-          <div class="chat-content"></div>
+          <div class="chat-content-premium chat-content"></div>
 
-          <!-- Campo de entrada de mensaje -->
-          <div class="chat-input mt-3">
-            <input type="text" class="form-control" placeholder="Escribe tu mensaje..." id="userInput" />
-            <button class="btn btn-primary chat-send-btn mt-2" id="sendMessage">
-              Enviar
-            </button>
+          <!-- Campo de entrada de mensaje mejorado -->
+          <div class="chat-input-container">
             <!-- Panel de emojis -->
-            <figure class="emoji-trigger">
-              <button id="toggleEmojiPanel" class="emoji-btn">😊</button>
+            <div class="emoji-trigger">
+              <button id="toggleEmojiPanel" class="emoji-btn" title="Emojis">😊</button>
               <div id="emojiPanel" class="emoji-panel hidden">
                 <span class="emoji">😀</span>
                 <span class="emoji">😂</span>
@@ -918,7 +924,13 @@
                 <span class="emoji">😫</span>
                 <span class="emoji">🤬</span>
               </div>
-            </figure>
+            </div>
+
+            <input type="text" id="userInput" placeholder="Escribe tu mensaje..." />
+
+            <button class="chat-send-btn" id="sendMessage">
+              <i class="bi bi-send-fill"></i>
+            </button>
           </div>
         </div>
       </div>

@@ -22,11 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
   function addMessage(message, sender) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message', sender);
-    messageDiv.innerHTML = `<p>${message}</p>`;
+    messageDiv.innerHTML = message;
     chatContent.appendChild(messageDiv);
 
-    // Desplazar al final del chat
-    chatContent.scrollTop = chatContent.scrollHeight;
+    // Desplazar al final del chat con efecto suave
+    chatContent.scrollTo({
+      top: chatContent.scrollHeight,
+      behavior: 'smooth'
+    });
 
     // SOLO reproducir sonido si es del bot Y NO es el mensaje de bienvenida inicial
     if (
@@ -373,21 +376,34 @@ document.addEventListener('DOMContentLoaded', function () {
       const emojiMessage = emoji.innerText;
       addMessage(emojiMessage, 'user');
 
+      // Ocultar el panel después de seleccionar uno
+      const panel = document.getElementById('emojiPanel');
+      panel.classList.add('hidden');
+
       setTimeout(() => {
         const botResponse = getBotResponse(emojiMessage);
         addMessage(botResponse, 'bot');
       }, 1000);
     });
   });
+
+  // Cerrar el panel de emojis al hacer clic fuera de él
+  document.addEventListener('click', function (event) {
+    const panel = document.getElementById('emojiPanel');
+    const trigger = document.getElementById('toggleEmojiPanel');
+
+    if (!panel.contains(event.target) && !trigger.contains(event.target)) {
+      panel.classList.add('hidden');
+    }
+  });
 });
 
-// Panel de emoji
-document
-  .getElementById('toggleEmojiPanel')
-  .addEventListener('click', function () {
-    const emojiPanel = document.getElementById('emojiPanel');
-    emojiPanel.classList.toggle('hidden');
-  });
+// Panel de emoji (el evento toggle ya está cubierto arriba o se puede mantener simplificado)
+document.getElementById('toggleEmojiPanel').addEventListener('click', function (e) {
+  e.stopPropagation(); // Evitar que el evento de cierre global lo oculte inmediatamente
+  const emojiPanel = document.getElementById('emojiPanel');
+  emojiPanel.classList.toggle('hidden');
+});
 
 // Funcionalidad de arrastre del modal
 document.addEventListener('DOMContentLoaded', function () {
